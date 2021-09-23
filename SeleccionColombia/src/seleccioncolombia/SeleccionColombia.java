@@ -13,7 +13,7 @@ public class SeleccionColombia {
         int seleccion;
         int contador=0;
         
-        Jugador[] jugador=new Jugador[23];
+        
         
         
         
