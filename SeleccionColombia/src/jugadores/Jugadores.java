@@ -23,7 +23,8 @@ public class Jugadores {
         this.edad = edad;
         this.equipoLiga = equipoLiga;
     }
-  //Los getters y setters     
+  //Los getters y setters   metodos de encapsulamiento
+    
       public int getNumCamiseta() {
         return numCamiseta;
     }
