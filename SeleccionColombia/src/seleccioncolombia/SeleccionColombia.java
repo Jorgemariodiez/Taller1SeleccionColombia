@@ -1,9 +1,7 @@
 
 package seleccioncolombia;
 
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 import jugadores.Jugadores;
 
 
@@ -32,14 +30,12 @@ public class SeleccionColombia {
            
            System.out.print("Digite una opcion: ");
            seleccion = lea.nextInt();
-                   
-        }while(seleccion !=5);
-        
-        switch (seleccion){
-            //Agregar
-            case 1:
+           
+          switch (seleccion){
+                //Agregar
+            case 1 :
                 jugadores[contador]=new Jugadores();
-                System.out.println(" Digite el numero de la camiseta: ");
+                System.out.print(" Digite el numero de la camiseta: ");
                 jugadores[contador].setNumCamiseta(lea.nextInt());
                 System.out.println(" Digite el nombre del jugador: ");
                 jugadores[contador].setNombre(lea.next());
@@ -56,35 +52,60 @@ public class SeleccionColombia {
                 
                 break;
                 //Buscar
-            case 2:
+            case 2 :
+               seleccion=0;
+               
+                System.out.print(" Ingrese el numero de la camiseta del jugador: ");
+                seleccion = lea.nextInt();
+                            
+                if (seleccion>0 && seleccion<23){
+                    System.out.println("--------------------------------------");
+                    System.out.println("Numero de la camiseta: "+jugadores[seleccion].getNumCamiseta());
+                    System.out.println("Nombre: "+jugadores[seleccion].getNombre()+" "+jugadores[seleccion].getApellido());
+                    System.out.println("Posicion: "+jugadores[seleccion].getPosicion()+" "+"Edad: "+jugadores[seleccion].getEdad());
+                    System.out.println("Equipo: "+jugadores[seleccion].getEquipoLiga());
+                    System.out.println("--------------------------------------");
+                    
+                    
+                }
                 break;
                 //Editar
-            case 3:
+            case 3 :
+                seleccion=0;
+               
+                System.out.print(" Ingrese el numero de la camiseta del jugador que va a editar: ");
+                seleccion = lea.nextInt();
+                        switch(seleccion){
+                            
+                        }
+                
                 break;
                 //Listar
-            case 4:
-                for(int i=0; i<contador; i++){
-                    System.out.println("-"+i+"--"+jugadores[i].getNombre()+" "+jugadores[i].getApellido());
+            case 4 :
+                for(int i=1; i<contador; i++){
+                    System.out.println("--------------------------------------");
+                    System.out.println("Numero de la camiseta: "+jugadores[i].getNumCamiseta());
+                    System.out.println("Nombre: "+jugadores[i].getNombre()+" "+jugadores[i].getApellido());
+                    System.out.println("Posicion: "+jugadores[i].getPosicion()+" "+"Edad: "+jugadores[i].getEdad());
+                    System.out.println("Equipo: "+jugadores[i].getEquipoLiga());
+                    System.out.println("--------------------------------------");
                 }
                 break;
                 //Salir
-            case 5:
+            case 5 :
                 System.out.println("Proceso Terminado");
                 System.exit(0);
                 break;
-            default:
+            default :
                 System.out.println("Opcion no valida");
                 break;
                 
+          }
+        }while(seleccion !=5);
+        
         }
         
-        
-        
-        
-        
-        
-        
-       
+    
     }
     
-}
+
